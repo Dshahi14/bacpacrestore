@@ -9,7 +9,7 @@ Write-Host "************************************************"
 Write-Host "variables"
 Write-Host "************************************************"
 $environment = "PRD";
-$backups = 'backups'
+$backups = 'backups1000000'
 $resourcegroup1 = "demo"
 $location1 = "EastUS"
 $sqlserver1 = "test1000000".ToLower()
