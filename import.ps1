@@ -13,7 +13,7 @@ $backups = 'backups1000000'
 $resourcegroup1 = "demo"
 $location1 = "EastUS"
 $sqlserver1 = "test1000000".ToLower()
-$keyvaultname = "storesecret1000000".ToLower()
+$keyvaultname = "storesecret100000010".ToLower()
 
 ### PRODUCTION
 Write-Host "************************************************"
