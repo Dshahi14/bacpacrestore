@@ -10,10 +10,10 @@ Write-Host "variables"
 Write-Host "************************************************"
 $environment = "PRD";
 $backups = 'backups'
-$resourcegroup1 = "AUAZE-$environment-demo"
-$location1 = "australiaeast"
-$sqlserver1 = "AUAZE-$environment-demo-dbsvrp1".ToLower()
-$keyvaultname = "au-demo-$environment-1".ToLower()    
+$resourcegroup1 = "demo"
+$location1 = "EastUS"
+$sqlserver1 = "test1000000".ToLower()
+$keyvaultname = "storesecret1000000".ToLower()
 
 ### PRODUCTION
 Write-Host "************************************************"
