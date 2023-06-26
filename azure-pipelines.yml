@@ -10,8 +10,7 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: AzurePowerShell@5
-  inputs:
+
 - task: AzurePowerShell@5
   inputs:
     azureSubscription: 'azure_connect'
