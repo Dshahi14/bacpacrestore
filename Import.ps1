@@ -5,9 +5,6 @@ import a database from a blob container in another subsciption
 [CmdletBinding()]
 param (
     [string] $tenantid,
-    [string] $production_subscriptionid,
-    [string] $production_spn_clientid,
-    [string] $production_spn_secret,
     [string] $subscriptionid,
     [string] $spn_clientid,
     [string] $spn_secret,
@@ -20,19 +17,18 @@ If ($environment -eq $null){
 Write-Host "************************************************"
 Write-Host "variables"
 Write-Host "************************************************"
-$resourcegroup1 = "AUAZE-$environment-DEMO"
-$production_resourcegroup1 = "AUAZE-PRD-DEMO"
-$sqlserver1 = "AUAZE-$environment-DEMO-dbsvrp1".ToLower()
-$keyvaultname = "au-DEMO-$environment-1".ToLower()    
-$backups = 'backups'
+$resourcegroup1 = "Demo"
+$sqlserver1 = "importdata1000".ToLower()
+$keyvaultname = "storesecret100000010".ToLower()    
+$backups = 'backups1000000'
 $filename = "DEMO_PRD_$(Get-Date -Format "yyyy-MM-dd").bacpac" ###            YOU CAN ONLY IMPORT TODAYS PRODUCTION EXPORT
-$bloburi = "https://backups.blob.core.windows.net/bacpac/$filename" 
+$bloburi = "https://backups1000000.blob.core.windows.net/bacpac/$filename" 
 
 ### PRODUCTION
 Write-Host "************************************************"
 Write-Host "login via spn to production and get the container key"
 Write-Host "************************************************"
-az login --service-principal --username $production_spn_clientid --password $production_spn_secret --tenant $tenantid
+az login --service-principal --username $spn_clientid --password $spn_secret --tenant $tenantid
 $keyvalue = az storage account keys list -g $production_resourcegroup1 -n $backups --subscription $production_subscriptionid --query '[0].value' -o json
 az logout --username $production_spn_clientid
 
