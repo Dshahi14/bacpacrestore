@@ -16,6 +16,6 @@ steps:
     azureSubscription: 'azure_connect'
     ScriptType: 'FilePath'
     ScriptPath: '$(Build.SourcesDirectory)/import.ps1'
-    ScriptArguments: '-tenantid $(tenantid) -subscriptionid $(subscriptionid) -spn_clientid $(spn_clientid) -spn_secret $(spn_secret)'
+    ScriptArguments: '-tenantid $(tenantid) -subscriptionid $(subscriptionid) -spn_clientid $(spn_clientid) -spn_secret $(spn_secret) -skuname $(skuname)'
     azurePowerShellVersion: 'LatestVersion'
 
