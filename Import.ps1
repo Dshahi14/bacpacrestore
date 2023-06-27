@@ -43,6 +43,6 @@ Write-Host "************************************************"
 Write-Host "import bacpac from production to blob container"
 Write-Host "************************************************" 
 az account set --subscription $subscriptionid
-az sql db delete -g $resourcegroup1 -s $sqlserver1 -n "DEMO" --yes
-az sql db create -g $resourcegroup1 -s $sqlserver1 -n "DEMO" --service-objective $skuname
-az sql db import -s $sqlserver1 -n "DEMO" -g $resourcegroup1 -u $sqladmin -p $sqlpassword  --auth-type SQL --storage-uri $bloburi --storage-key-type "StorageAccessKey" --storage-key "$keyvalue"
+az sql db delete -g $resourcegroup1 -s $sqlserver1 -n "test" --yes
+az sql db create -g $resourcegroup1 -s $sqlserver1 -n "test" --service-objective $skuname
+az sql db import -s $sqlserver1 -n "test" -g $resourcegroup1 -u $sqladmin -p $sqlpassword  --auth-type SQL --storage-uri $bloburi --storage-key-type "StorageAccessKey" --storage-key "$keyvalue"
