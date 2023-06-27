@@ -29,8 +29,8 @@ Write-Host "************************************************"
 Write-Host "login via spn to production and get the container key"
 Write-Host "************************************************"
 az login --service-principal --username $spn_clientid --password $spn_secret --tenant $tenantid
-$keyvalue = az storage account keys list -g $production_resourcegroup1 -n $backups --subscription $production_subscriptionid --query '[0].value' -o json
-az logout --username $production_spn_clientid
+$keyvalue = az storage account keys list -g $resourcegroup1 -n $backups --subscription $subscriptionid --query '[0].value' -o json
+az logout --username $spn_clientid
 
 ### DEV or UAT 
 Write-Host "************************************************"
