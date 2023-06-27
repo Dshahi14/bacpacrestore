@@ -30,6 +30,7 @@ Write-Host "login via spn to production and get the container key"
 Write-Host "************************************************"
 az login --service-principal --username $spn_clientid --password $spn_secret --tenant $tenantid
 $keyvalue = az storage account keys list -g $resourcegroup1 -n $backups --subscription $subscriptionid --query '[0].value' -o json
+az storage container policy create --container-name bacpac --name ReadWrite --account-key ""$keyvalue"" --account-name $backups --auth-mode key --permissions rwdl
 az logout --username $spn_clientid
 
 ### DEV or UAT 
@@ -38,7 +39,7 @@ Write-Host "login to dev or uat"
 Write-Host "************************************************" 
 az login --service-principal --username $spn_clientid --password $spn_secret --tenant $tenantid
 $sqladmin = az keyvault secret show --name 'sqladmin' --vault-name $keyvaultname --query 'value' 
-$sqlpassword = az keyvault secret show --name 'sqlpassword' --vault-name $keyvaultname --query 'value' 
+$sqlpassword = az keyvault secret show --name 'sqlpassword' --vault-name $keyvaultname --query 'value'
 Write-Host "************************************************"
 Write-Host "import bacpac from production to blob container"
 Write-Host "************************************************" 
