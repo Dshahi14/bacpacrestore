@@ -17,7 +17,7 @@ If ($environment -eq $null){
 Write-Host "************************************************"
 Write-Host "variables"
 Write-Host "************************************************"
-$resourcegroup1 = "Demo"
+$resourcegroup1 = "demo"
 $sqlserver1 = "importdata1000".ToLower()
 $keyvaultname = "storesecret100000010".ToLower()    
 $backups = 'backups1000000'
