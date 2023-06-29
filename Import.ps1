@@ -18,7 +18,7 @@ Write-Host "************************************************"
 Write-Host "variables"
 Write-Host "************************************************"
 $resourcegroup1 = "demo"
-$sqlserver1 = "importdata1000".ToLower()
+$sqlserver1 = "backups1000000".ToLower()
 $keyvaultname = "storesecret100000010".ToLower()    
 $backups = 'backups1000000'
 $filename = "DEMO_PRD_$(Get-Date -Format "yyyy-MM-dd").bacpac" ###            YOU CAN ONLY IMPORT TODAYS PRODUCTION EXPORT
